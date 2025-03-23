@@ -46,8 +46,8 @@ Question: {user_input}
 
 
 # Set Google API key (replace with your key or use an env variable)
-GOOGLE_API_KEY = 'AIzaSyByIFKFXWGJxyD0wB0qrjJdPeJDGv_P_H4' # "YOUR_GOOGLE_API_KEY"  # Replace with your actual Gemini API key
-os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"] # "YOUR_GOOGLE_API_KEY"  # Replace with your actual Gemini API key
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.5)
